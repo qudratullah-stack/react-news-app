@@ -5,20 +5,22 @@ export default function NewsParent(props) {
   const [articles, setarticle] = useState([]);
   const [loading, setloading] = useState(false);
   let api_key = process.env.REACT_APP_API_KEY;
-  let Url = `https://newsapi.org/v2/top-headlines?category=${props.category}&apiKey=${api_key}`;
-  useEffect(() => {
-    setloading(true);
-    fetch(Url)
-     .then((response) => {
-      if(!response.ok){
-        throw new Error(`HTTP error! status:${response.status}`);
-      }
-      return response.json()})
-      .then((data) => setarticle(data.articles))
-      .catch((err) => console.log(`this is the HTTP error ${err}`))
-      
-      .finally(() => setloading(false));
-  }, [props.category]);
+  let Url = `https://api.allorigins.win/get?url=${encodeURIComponent(
+  `https://newsapi.org/v2/top-headlines?category=${props.category}&apiKey=${api_key}`
+)}`;
+  
+  uuseEffect(() => {
+  setloading(true);
+  fetch(Url)
+    .then((response) => response.json())
+    .then((data) => {
+      // allorigins proxy کے لیے
+      const parsedData = JSON.parse(data.contents);
+      setarticle(parsedData.articles);
+    })
+    .catch((err) => console.log(err))
+    .finally(() => setloading(false));
+}, [props.category]);
   return (
     <>
     <div className="spinner_parent">
