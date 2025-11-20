@@ -9,12 +9,12 @@ export default function NewsParent(props) {
   `https://newsapi.org/v2/top-headlines?category=${props.category}&apiKey=${api_key}`
 )}`;
   
-  uuseEffect(() => {
+  useEffect(() => {
   setloading(true);
   fetch(Url)
     .then((response) => response.json())
     .then((data) => {
-      // allorigins proxy کے لیے
+      
       const parsedData = JSON.parse(data.contents);
       setarticle(parsedData.articles);
     })
