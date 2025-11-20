@@ -15,11 +15,11 @@ function App() {
     <>
       <BrowserRouter>
         <Navbar
-          navbar_h1="Latest News Around the World"
+         
           toggleMode={() => setMode(!mode)}
           style={{
             backgroundColor: mode ? "#6c6767" : "#007bff",
-            Color: mode ? "white" : "black",
+            color: mode ? "white" : "black",
           }}
           mode={mode}
         />
@@ -29,10 +29,8 @@ function App() {
             element={<NewsParent mode={mode} category="Sports" />}
           />
           <Route
-            path="/World"
-            element={<NewsParent mode={mode} category="World" />}
-          />
-          <Route
+           
+          
             path="/Technology"
             element={<NewsParent mode={mode} category="Technology" />}
           />

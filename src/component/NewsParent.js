@@ -4,17 +4,21 @@ import Spinner from "./Spinner";
 export default function NewsParent(props) {
   const [articles, setarticle] = useState([]);
   const [loading, setloading] = useState(false);
-  let api_key = "1abc3c6036604595a09618a6efd7c870";
+  let api_key = process.env.REACT_APP_API_KEY;
   let Url = `https://newsapi.org/v2/top-headlines?category=${props.category}&apiKey=${api_key}`;
   useEffect(() => {
     setloading(true);
     fetch(Url)
-     .then((response) => response.json())
+     .then((response) => {
+      if(!response.ok){
+        throw new Error(`HTTP error! status:${response.status}`);
+      }
+      return response.json()})
       .then((data) => setarticle(data.articles))
-      .catch((err) => console.log(err))
-
+      .catch((err) => console.log(`this is the HTTP error ${err}`))
+      
       .finally(() => setloading(false));
-  }, [Url]);
+  }, [props.category]);
   return (
     <>
     <div className="spinner_parent">
