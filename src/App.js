@@ -25,30 +25,30 @@ function App() {
         />
         <Routes>
           <Route
-            path="/"
-            element={<NewsParent mode={mode} category="Sports" />}
+            path="/sports"
+            element={<NewsParent mode={mode} category="sports" />}
           />
           <Route
            
           
-            path="/Technology"
-            element={<NewsParent mode={mode} category="Technology" />}
+            path="/technology"
+            element={<NewsParent mode={mode} category="technology" />}
           />
           <Route
-            path="/Business"
-            element={<NewsParent mode={mode} category="Business" />}
+            path="/business"
+            element={<NewsParent mode={mode} category="business" />}
           />
           <Route
-            path="/Health"
-            element={<NewsParent mode={mode} category="Health" />}
+            path="/health"
+            element={<NewsParent mode={mode} category="health" />}
           />
           <Route
             path="/general"
             element={<NewsParent mode={mode} category="general" />}
           />
           <Route
-            path="/Entertainment"
-            element={<NewsParent mode={mode} category="Entertainment" />}
+            path="/entertainment"
+            element={<NewsParent mode={mode} category="entertainment" />}
           />
           <Route
             path="/science"

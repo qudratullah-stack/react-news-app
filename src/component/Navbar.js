@@ -20,14 +20,14 @@ export default function Navbar(props) {
         <nav className= {`nav ${three_dot?'active':''}`}>
         <ul>
           
-      <li> <Link to="/">Sports</Link></li>
+      <li> <Link to="/sports">Sports</Link></li>
        
-       <li><Link to="/Technology">Technology</Link></li>
-       <li><Link to="/Business">Business</Link></li>
-       <li><Link to="/Health">Health</Link></li>
-       <li><Link to="/general">general</Link></li>
-       <li><Link to="/Entertainment">Entertainment</Link></li>
-       <li><Link to="/science">science</Link></li>
+       <li><Link to="/technology">Technology</Link></li>
+       <li><Link to="/business">Business</Link></li>
+       <li><Link to="/health">Health</Link></li>
+       <li><Link to="/general">General</Link></li>
+       <li><Link to="/entertainment">Entertainment</Link></li>
+       <li><Link to="/science">Science</Link></li>
 
          
         </ul>
