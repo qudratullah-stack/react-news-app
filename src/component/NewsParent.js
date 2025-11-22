@@ -5,7 +5,7 @@ export default function NewsParent(props) {
   const [datas, setdata] = useState([]);
   const [loading, setloading] = useState(false);
   
-  let Url =  `http://api.mediastack.com/v1/news?access_key=${process.env.REACT_APP_API_KEY}&countries=gb&languages=en&keywords=${props.category}&limit=30`;
+  let Url =  `https://api.mediastack.com/v1/news?access_key=${process.env.REACT_APP_API_KEY}&countries=gb&languages=en&keywords=${props.category}&limit=30`;
   
  useEffect(() => {
   setloading(true);
